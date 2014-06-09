@@ -1,4 +1,4 @@
-# Be sure to restart your server when you modify this file.
+	# Be sure to restart your server when you modify this file.
 
 # Your secret key is used for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-MasterbetApp::Application.config.secret_key_base = 'fe0e2c0b48c680206a8103c4b0afca0729eac947946e288216ef716eb30d32a65c9f3f45e0f9fededf086d08f85337f37b8508fd729766c6430b01a690fb0c25'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+MasterbetApp::Application.config.secret_key_base = secure_token

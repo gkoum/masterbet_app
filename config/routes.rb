@@ -1,4 +1,11 @@
 MasterbetApp::Application.routes.draw do
+  get "static_pages/home"
+  get "static_pages/results"
+  get "static_pages/blog"
+  get "static_pages/tips"
+  get "static_pages/galery"
+  get "static_pages/contact"
+  get "static_pages/login"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
