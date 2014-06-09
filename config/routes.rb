@@ -1,4 +1,5 @@
 MasterbetApp::Application.routes.draw do
+  
   get "static_pages/home"
   get "static_pages/results"
   get "static_pages/blog"
