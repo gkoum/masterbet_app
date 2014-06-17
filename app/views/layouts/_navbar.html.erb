@@ -10,19 +10,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">OPAP-shop page</a>
+              <%= link_to "OPAP-Shop",    root_path, class: "navbar-brand" %>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><%= link_to "Αρχική",    '#' %></li>
-                <li><%= link_to "Αποτελέσματα",    '#' %></li>
-                <li><%= link_to "Προγνωστικά",    '#' %></li>
-                <li><%= link_to "Εικόνες",    '#' %></li>
+                <li class="active"><%= link_to "Αρχική",    root_path %></li>
+                <li><%= link_to "Αποτελέσματα",    results_path %></li>
+                <li><%= link_to "Προγνωστικά",    tips_path %></li>
+                <li><%= link_to "Εικόνες",    galery_path %></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Επικοινωνία <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Κατάστημα</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><%= link_to "Κατάστημα",    contact_path %></li>
+                    <li><%= link_to "Blog",    blog_path %></li>
                     <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>

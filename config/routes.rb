@@ -1,11 +1,10 @@
 MasterbetApp::Application.routes.draw do
-  
-  get "static_pages/home"
-  get "static_pages/results"
-  get "static_pages/blog"
-  get "static_pages/tips"
-  get "static_pages/galery"
-  get "static_pages/contact"
+  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/results', to: 'static_pages#results', via: 'get'
+  match '/blog', to: 'static_pages#blog', via: 'get'
+  match '/tips', to: 'static_pages#tips', via: 'get'
+  match '/galery', to: 'static_pages#galery', via: 'get'
+  root 'static_pages#home'
   get "static_pages/login"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
