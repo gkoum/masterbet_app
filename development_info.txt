@@ -1,0 +1,1 @@
+rails generate model User name:string email:string username:string password_digest:string address:string shopnumber:string phone:string mobile:string

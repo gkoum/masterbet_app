@@ -1,4 +1,6 @@
 MasterbetApp::Application.routes.draw do
+  get "users/new"
+  match '/signup',  to: 'users#new',            via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/results', to: 'static_pages#results', via: 'get'
   match '/blog', to: 'static_pages#blog', via: 'get'
