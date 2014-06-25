@@ -1,0 +1,21 @@
+<% provide(:title, "Sign in") %>
+
+<div class="container">
+
+  <div class="form-signin" role="form">
+  	<h2 class="form-signin-heading">
+  		Είσοδος Χρήστη</h2>
+    <%= form_for(:session, url: sessions_path, :html => {:class => "form-signin"}) do |f| %>
+
+      <%= f.label :email, "Εισάγετε το email σας" %>
+      <%= f.text_field :email, :class => "form-control" %>
+
+      <%= f.label :password, "Κωδικός Πρόσβασης" %>
+      <%= f.password_field :password, :class => "form-control" %>
+
+      <%= f.submit "Είσοδος", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p>Νέος Χρήστης; <%= link_to "Εγγραφείτε τώρα!", signup_path %></p>
+  </div>
+</div>

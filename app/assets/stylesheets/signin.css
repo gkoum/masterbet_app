@@ -1,5 +1,9 @@
-body {
+.pull-right{
+  padding-right: 30px;
+}
 
+.top {
+  padding-top: 60px;
 }
 
 .form-signin {

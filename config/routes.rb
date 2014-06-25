@@ -1,6 +1,9 @@
 MasterbetApp::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/results', to: 'static_pages#results', via: 'get'
   match '/blog', to: 'static_pages#blog', via: 'get'

@@ -1,0 +1,19 @@
+<% provide(:title, 'All users') %>
+
+<div class="container">
+
+  <div class="form-signin" role="form">
+    <h2 class="form-signin-heading">
+  		Όλοι οι Χρήστες</h2>
+  	<%= will_paginate %>
+	<ul class="users">
+  		<% @users.each do |user| %>
+    	<li>
+      	<%= link_to user.name, user %>
+      	<%= link_to user.email, user %>
+    	</li>
+  		<% end %>
+	</ul>
+	<%= will_paginate %>
+  </div>
+</div>
