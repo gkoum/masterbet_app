@@ -42,3 +42,9 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.flash{  
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 65px;
+}
