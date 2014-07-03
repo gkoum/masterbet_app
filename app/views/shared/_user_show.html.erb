@@ -1,7 +1,17 @@
 <% provide(:title, @user.name ) %>
 <div class="form-signin">
 <div class="top">
-	
+	<h1><%= @user.name %></h1> 
+	<%= @user.email %>
+	<div class="span8">
+    	<% if @user.microposts.any? %>
+      		<h3>Microposts (<%= @user.microposts.count %>)</h3>
+      		<ol class="microposts">
+        	<%= render @microposts %>
+      		</ol>
+      		<%= will_paginate @microposts %>
+    	<% end %>
+  	</div>
     <% if signed_in? %>
   <div class="row">
     <aside class="span4">
@@ -13,22 +23,7 @@
       </section>
     </aside>
   </div>
-  <div class="span8">
-      <h3>Οι δημοσιεύσεις μου</h3>
-      <%= render 'shared/feed' %>
-  </div>
 <% else %>
-<h1><%= @user.name %></h1> 
-  <%= @user.email %>
-  <div class="span8">
-      <% if @user.microposts.any? %>
-          <h3>Microposts (<%= @user.microposts.count %>)</h3>
-          <ol class="microposts">
-          <%= render @microposts %>
-          </ol>
-          <%= will_paginate @microposts %>
-      <% end %>
-    </div>
   <div class="center hero-unit">
     <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
                                 class: "btn btn-large btn-primary" %>

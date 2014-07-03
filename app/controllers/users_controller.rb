@@ -12,7 +12,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if signed_in?
+  		@user=current_user
+  		@micropost  = current_user.microposts.build
+    	@feed_items = current_user.feed.paginate(page: params[:page])
+    else
+    	@user = User.find(params[:id])
+    end
   end
 
   def edit
@@ -54,13 +60,6 @@ class UsersController < ApplicationController
     end
 
     # Before filters
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
 
     def correct_user
       @user = User.find(params[:id])

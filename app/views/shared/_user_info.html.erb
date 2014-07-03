@@ -1,0 +1,11 @@
+
+<h1>
+  <%= current_user.name %>
+</h1>
+
+<span>
+  <% current_user.email %><%= link_to "Ο Λογαριασμός μου", current_user %>
+</span>
+<span>
+  Σύνολο σχολίων <%= pluralize(current_user.microposts.count, "micropost") %>
+</span>
