@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   def show
     if signed_in?
   		@user=current_user
+
   		@micropost  = current_user.microposts.build
+      @category=@micropost.category.to_s
     	@feed_items = current_user.feed.paginate(page: params[:page])
     else
     	@user = User.find(params[:id])

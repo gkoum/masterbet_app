@@ -1,5 +1,32 @@
 <% provide(:title, 'Προγνωστικά') %>
 <div class="top">
-<h1>StaticPages#tips</h1>
-<p>Find me in app/views/static_pages/tips.html.erb</p>
+<div class="container marketing">
+  <div class="row">
+    <div class="col-lg-4">
+    <% if signed_in? %>
+      <% if @user.admin? %>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    <% end %>
+    </div>
+    <div class="col-lg-4">
+      <h3>Οι δημοσιεύσεις μου</h3>
+      <%= render 'shared/tips_feed' %>
+    </div>
+  
+<% else %>
+<h1><%= @user.name %></h1> 
+  <%= @user.email %>
+  
+  <div class="center hero-unit">
+    <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
+</div>
+</div>
 </div>

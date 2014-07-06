@@ -1,0 +1,44 @@
+<!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li class="" data-target="#myCarousel" data-slide-to="1"></li>
+        <li class="active" data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item">
+          <%= link_to image_tag("Football-Bet.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Γίνε Μέλος Σήμερα!</h1>
+              <p>Του καταστήματος και της μεγαλύτερης κοινότητας για τα πρακτορεία του ΟΠΑΠ στην Ελλάδα.</p>
+              <p><%= link_to "Εγγραφείτε σήμερα!", signup_path, class: "btn btn-lg btn-primary" %></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <%= link_to image_tag("Football-Bet1.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Διαφήμιση.</h1>
+              <p>Κάτι διαφημιστικό.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Μάθε περισσότερα</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item active">
+          <%= link_to image_tag("Football-Bet2.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Διαφήμιση.</h1>
+              <p>Μέσαααααα.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Δείτε τις φωτογραφίες μας</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->

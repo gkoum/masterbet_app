@@ -1,10 +1,17 @@
-<%= form_for(@micropost) do |f| %>
+<%= form_for @micropost, :html => {:multipart => true} do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Εισάγετε νέο σχόλιο..." %>
+    <%= f.text_area :content, placeholder: "Εισάγετε ένα νέο σχόλιο..." %>
   </div>
   <div class="field">
+  <p align=center>
   	<%= f.file_field :image %>
+  </p>
   </div>
+  <div class="field">	
+  	Κατηγορία Δημοσίευσης:
+  	<%= f.select :category, [['Νέα','news'],['Προγνωστικά','tips'],['Αποτελέσματα','results']] %>
+  </div>
+  
   <%= f.submit "Ανάρτηση", class: "btn btn-large btn-primary" %>
 <% end %>
