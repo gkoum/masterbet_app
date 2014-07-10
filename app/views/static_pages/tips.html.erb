@@ -9,20 +9,35 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
-        <%= render 'shared/micropost_form' %>
+      <p>Αναζητήστε τον αγώνα με τον αριθμό του</p>
+      <textarea rows="1" cols="10">
+          Αριθμός
+      </textarea>
+      <%= form_for @micropost, :html => {:multipart => true} do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+      <%= f.text_area :text, placeholder: "Εισάγετε κείμενο για το προγνωστικό σας..." %>
+      </div>
+      <div class="field">
+      <%= f.text_area :content, placeholder: "Εισάγετε το προγνωστικό σας..." %>
+      </div>
+      <div class="field"> 
+      Κατηγορία Δημοσίευσης:
+      <%= f.select :category, [['Προγνωστικά','tips']] %>
+      </div>
+      <%= f.submit "Δημοσίευση Προγνωστικού", class: "btn btn-large btn-primary" %>
+    <% end %>
       </section>
     <% end %>
     </div>
     <div class="col-lg-4">
-      <h3>Οι δημοσιεύσεις μου</h3>
+      <h3>Τα Προγνωστικά μας</h3>
       <%= render 'shared/tips_feed' %>
     </div>
   
 <% else %>
-<h1><%= @user.name %></h1> 
-  <%= @user.email %>
-  
-  <div class="center hero-unit">
+  <div class="top">
+  <h3>Χώρος εγγεγραμένων χτηστών με προγνωστικά απο το πρακτορείο μας!</h3>
     <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>

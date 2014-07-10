@@ -1,0 +1,36 @@
+<% provide(:title, 'Τυχερά Δελτία') %>
+<div class="top">
+<div class="container marketing">
+  <div class="row">
+    <div class="col-lg-4">
+    <% if @user.admin? %>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= form_for @micropost, :html => {:multipart => true} do |f| %>
+  		<%= render 'shared/error_messages', object: f.object %>
+  		<div class="field">
+    	<%= f.text_area :content, placeholder: "Εισάγετε κείμενο πάνω απο την εικόνα..." %>
+  		</div>
+  		<div class="field">
+  		<p align=center>
+  		<%= f.file_field :image %>
+  		</p>
+  		</div>
+  		<div class="field">	
+  		<p>Κατηγορία Δημοσίευσης:
+  		<%= f.select :category, [['Τυχερά Δελτία','lucky']] %></p>
+  		</div>
+ 		  <%= f.submit "Δημοσίευση Τυχερού Δελτίου", class: "btn btn-large btn-primary" %>
+		<% end %>
+      </section>
+    <% end %>
+    </div>
+    <div class="col-lg-4">
+      <h3>Τα τυχερά μας Δελτία</h3>
+      <%= render 'shared/lucky_feed' %>
+    </div>
+</div>
+</div>
+</div>

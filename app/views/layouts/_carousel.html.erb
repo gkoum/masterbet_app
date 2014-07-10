@@ -9,7 +9,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="item">
-          <%= link_to image_tag("Football-Bet.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <%= link_to image_tag("Football-Bet.jpg", alt: "Rails"), signup_path %>
           <div class="container">
             <div class="carousel-caption">
               <h1>Γίνε Μέλος Σήμερα!</h1>
@@ -19,22 +19,22 @@
           </div>
         </div>
         <div class="item">
-          <%= link_to image_tag("Football-Bet1.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <%= link_to image_tag("Football-Bet1.jpg", alt: "Rails"), galery_path %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Διαφήμιση.</h1>
-              <p>Κάτι διαφημιστικό.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Μάθε περισσότερα</a></p>
+              <h1>Νέα-Ειδήσεις</h1>
+              <p>Διαβάστε όλα όσα σας αφορούν για το στοίχημα και τα παιχνίδια του ΟΠΑΠ</p>
+              <p><%= link_to "Νέα-Ειδήσεις", galery_path, class: "btn btn-lg btn-primary" %></p>
             </div>
           </div>
         </div>
         <div class="item active">
-          <%= link_to image_tag("Football-Bet2.jpg", alt: "Rails"), 'http://rubyonrails.org/' %>
+          <%= link_to image_tag("Football-Bet2.jpg", alt: "Rails"), galery_path %>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Διαφήμιση.</h1>
-              <p>Μέσαααααα.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Δείτε τις φωτογραφίες μας</a></p>
+              <h1>Δείτε το Πρακτορείο μας!</h1>
+              <p>Ζωντανή περιήγηση, φωτογραφίες και άλλα πολλά...</p>
+              <p><%= link_to "Δείτε τις Φωτογραφίες μας!", galery_path, class: "btn btn-lg btn-primary" %></p>
             </div>
           </div>
         </div>

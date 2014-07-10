@@ -17,13 +17,10 @@
       <h3>Οι δημοσιεύσεις μου</h3>
       <%= render 'shared/feed' %>
     </div>
-    <h1><%= @user.name %></h1>
+    
       
   
 <% else %>
-<h1><%= @user.name %></h1> 
-  <%= @user.email %>
-  
   <div class="center hero-unit">
     <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
                                 class: "btn btn-large btn-primary" %>

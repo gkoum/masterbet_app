@@ -1,11 +1,8 @@
 <% if tips_feed_item.category == "tips" %>
 
   <li align=left id="<%= tips_feed_item.id %>" class="feed">
-    <div class="content"><%= tips_feed_item.content %></div>  
-      <% if tips_feed_item.image_url != nil %>
-        <img hidden class="avatar" src=<%= tips_feed_item.image_url(:thumb).to_s %> alt="Avatar">
-        <canvas class="myCanvas" width="400" height="200" style="border:1px "></canvas>
-      <% end %>
+    <div class="content"><%= tips_feed_item.text %></div> 
+    <div class="content">Για το σημείο 328 το προγνωστικό μας είναι: <%= tips_feed_item.content %></div> 
       <span class="timestamp">
         Posted <%= time_ago_in_words(tips_feed_item.created_at) %> ago.
       </span>

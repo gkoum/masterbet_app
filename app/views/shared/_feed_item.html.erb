@@ -1,6 +1,6 @@
 
   <li align=left id="<%= feed_item.id %>" class="feed">
-    <div class="content"><%= feed_item.content %></div>  
+    <div class="content"><%= wrap(feed_item.content) %></div>  
       <% if feed_item.image_url != nil %>
         <img hidden class="avatar" src=<%= feed_item.image_url(:thumb).to_s %> alt="Avatar">
         <canvas class="myCanvas" width="400" height="200" style="border:1px "></canvas>

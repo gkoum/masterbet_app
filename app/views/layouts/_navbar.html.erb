@@ -14,17 +14,36 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><%= link_to "Αρχική",    root_path %></li>
-                <li><%= link_to "Αποτελέσματα",    results_path %></li>
-                <li><%= link_to "Προγνωστικά",    tips_path %></li>
-                <li><%= link_to "Εικόνες",    galery_path %></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Το Πρακτορείο μου <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Περιγραφή",    contact_path %></li>
+                    <li><%= link_to "Εικόνες",    galery_path %></li>
+                    <li><%= link_to "Εικόνα 360",    galery_path %></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Παιχνίδια ΟΠΑΠ<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Αποτελέσματα",    results_path %></li>
+                    <li><%= link_to "Τζακποτ",    results_path %></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Νέα<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Προγνωστικά",    tips_path %></li>
+                    <li><%= link_to "Κέρδη",    tips_path %></li>
+                    <li><%= link_to "Ειδήσεις",    tips_path %></li>
+                    <li><%= link_to "Events",    tips_path %></li>
+                    <li><%= link_to "Τυχερά Δελτία",    lucky_path %></li>
+                  </ul>
+                </li>
                 <li><%= link_to "Blog",    blog_path %></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Επικοινωνία <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to "Κατάστημα",    contact_path %></li>
-                    
-                    
                     <li class="divider"></li>
                     <li class="dropdown-header">Γίνε Μέλος!</li>
                     <li><%= link_to "Έγγραφή Χρήστη",    signup_path %></li>

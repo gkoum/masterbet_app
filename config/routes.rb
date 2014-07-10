@@ -10,6 +10,7 @@ MasterbetApp::Application.routes.draw do
   match '/blog', to: 'static_pages#blog', via: 'get'
   match '/tips', to: 'static_pages#tips', via: 'get'
   match '/galery', to: 'static_pages#galery', via: 'get'
+  match '/lucky', to: 'static_pages#lucky', via: 'get'
   root 'static_pages#home'
   get "static_pages/login"
   # The priority is based upon order of creation: first created -> highest priority.
