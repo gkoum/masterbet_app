@@ -9,10 +9,20 @@
         <%= render 'shared/user_info' %>
       </section>
       <section>
-      <p>Αναζητήστε τον αγώνα με τον αριθμό του</p>
-      <textarea rows="1" cols="10">
-          Αριθμός
-      </textarea>
+        <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h3>Αναζητήστε τον αγώνα της επιλογής σας</h3><span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">32 - Ολυμπιακός-Παναθηναικός - 25/04/14</a></li>
+                  <li><a href="#">33 - ΠΑΣ Γιάννενα-Καλλιθέα - 25/04/14</a></li>
+                  <li><a href="#">34 - Καβάλα-Λάρισα - 25/04/14</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">1/05/14</li>
+                  <li><a href="#">1 - Ολυμπιακός-Λάρισα - 1/05/14</a></li>
+                  <li><a href="#">2 - Καλλιθέα-Πανιώνιος - 1/05/14</a></li>
+                </ul>
+              </li>
+            </ul>
       <%= form_for @micropost, :html => {:multipart => true} do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="field">
@@ -21,10 +31,10 @@
       <div class="field">
       <%= f.text_area :content, placeholder: "Εισάγετε το προγνωστικό σας..." %>
       </div>
-      <div class="field"> 
+      <p><div class="field"> 
       Κατηγορία Δημοσίευσης:
       <%= f.select :category, [['Προγνωστικά','tips']] %>
-      </div>
+      </div></p>
       <%= f.submit "Δημοσίευση Προγνωστικού", class: "btn btn-large btn-primary" %>
     <% end %>
       </section>
@@ -34,10 +44,10 @@
       <h3>Τα Προγνωστικά μας</h3>
       <%= render 'shared/tips_feed' %>
     </div>
-  
+    
 <% else %>
   <div class="top">
-  <h3>Χώρος εγγεγραμένων χτηστών με προγνωστικά απο το πρακτορείο μας!</h3>
+  <h3>Χώρος εγγεγραμένων χρηστών με προγνωστικά απο το πρακτορείο μας!</h3>
     <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>

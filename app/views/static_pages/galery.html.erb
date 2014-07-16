@@ -1,5 +1,78 @@
 <% provide(:title, 'Gallery') %>
 <div class="top">
-	<h1>StaticPages#galery</h1>
-	<p>Find me in app/views/static_pages/galery.html.erb</p>
+<div class="container marketing">
+
+  <div class="row">
+    
+    <% if signed_in? %>
+    <% if @user.admin? %>
+    <div class="col-6 col-sm-6 col-lg-4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= form_for @micropost, :html => {:multipart => true} do |f| %>
+  		  <%= render 'shared/error_messages', object: f.object %>
+  		  <div class="field">
+  		  <p align=center>
+  		  <%= f.file_field :image %>
+  		  </p>
+  		  </div>
+  		  <div class="field">	
+  		  <p>Κατηγορία Δημοσίευσης:
+  		  <%= f.select :category, [['Gallery','gallery']] %></p>
+  		  </div>
+ 		    <%= f.submit "Δημοσίευση Φωτογραφίας", class: "btn btn-large btn-primary" %>
+		    <% end %>
+      </section>
+    <% end %>
+    <% end %>
+    </div>
+    
+    	<h3>Οι φωτογραφίες μας</h3>
+      	<div id="links">
+		<%= render 'shared/gallery_feed' %>
+		</div>
+    
 </div>
+</div>
+
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close"><h4>Κλείσιμο</h4>×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>

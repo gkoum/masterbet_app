@@ -1,0 +1,23 @@
+<% provide(:title, 'Events') %>
+
+<div class="top">
+<div class="container marketing">
+  <div class="row">
+    
+    <% if signed_in? %>
+      <% if @user.admin? %>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    <% end %>
+    <% end %>
+    <h3>Σημαντικά Events</h3>
+    <%= render 'shared/feed' %>
+
+
+</div>
+</div>
+</div>

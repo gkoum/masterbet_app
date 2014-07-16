@@ -1,0 +1,6 @@
+<% if @feed_items.any? %>
+  <ul class="microposts">
+    <%= render partial: 'shared/gallery_feed_item', collection: @feed_items %>
+  </ul>
+
+<% end %>

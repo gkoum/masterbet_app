@@ -3,28 +3,30 @@
 <div class="container marketing">
   <div class="row">
     <div class="col-lg-4">
+    <% if signed_in? %>
     <% if @user.admin? %>
       <section>
         <%= render 'shared/user_info' %>
       </section>
       <section>
         <%= form_for @micropost, :html => {:multipart => true} do |f| %>
-  		<%= render 'shared/error_messages', object: f.object %>
-  		<div class="field">
-    	<%= f.text_area :content, placeholder: "Εισάγετε κείμενο πάνω απο την εικόνα..." %>
-  		</div>
-  		<div class="field">
-  		<p align=center>
-  		<%= f.file_field :image %>
-  		</p>
-  		</div>
-  		<div class="field">	
-  		<p>Κατηγορία Δημοσίευσης:
-  		<%= f.select :category, [['Τυχερά Δελτία','lucky']] %></p>
-  		</div>
- 		  <%= f.submit "Δημοσίευση Τυχερού Δελτίου", class: "btn btn-large btn-primary" %>
-		<% end %>
+  		  <%= render 'shared/error_messages', object: f.object %>
+  		  <div class="field">
+    	 <%= f.text_area :content, placeholder: "Εισάγετε κείμενο πάνω απο την εικόνα..." %>
+  		  </div>
+  		  <div class="field">
+  		  <p align=center>
+  		  <%= f.file_field :image %>
+  		  </p>
+  		  </div>
+  		  <div class="field">	
+  		  <p>Κατηγορία Δημοσίευσης:
+  		  <%= f.select :category, [['Τυχερά Δελτία','lucky']] %></p>
+  		  </div>
+ 		    <%= f.submit "Δημοσίευση Τυχερού Δελτίου", class: "btn btn-large btn-primary" %>
+		    <% end %>
       </section>
+    <% end %>
     <% end %>
     </div>
     <div class="col-lg-4">

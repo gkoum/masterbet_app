@@ -15,14 +15,15 @@
     <% end %>
     </div>
     <div class="col-lg-4">
-      <h3>Οι δημοσιεύσεις μου</h3>
+      <h3>Οι δημοσιεύσεις στο Blog μου</h3>
       <%= render 'shared/feed' %>
     </div>
     
       
   
 <% else %>
-  <div class="center hero-unit">
+<div class="top">
+  <h3>Χώρος εγγεγραμένων χρηστών για ανταλλαγή απόψεων, προγνωστικών και σχολίων!</h3>
     <%= link_to "Γραφτείτε για να συμμετάσχετε!", signup_path,
                                 class: "btn btn-large btn-primary" %>
   </div>

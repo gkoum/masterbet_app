@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   		@micropost  = current_user.microposts.build
       @category=@micropost.category.to_s
-    	@feed_items = current_user.feed.paginate(page: params[:page])
+    	@feed_items = current_user.feed.paginate(page: params[:page], :per_page => 5)
     else
     	@user = User.find(params[:id])
     end

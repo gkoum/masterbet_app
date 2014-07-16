@@ -2,7 +2,25 @@
 
   <li align=left id="<%= tips_feed_item.id %>" class="feed">
     <div class="content"><%= tips_feed_item.text %></div> 
-    <div class="content">Για το σημείο 328 το προγνωστικό μας είναι: <%= tips_feed_item.content %></div> 
+    <div class="content"><table class="table">
+            <thead>
+              <tr>
+                <th>Προγνωστικό</th>
+                <th>Αριθμός Αγώνα</th>
+                <th>Αγώνας</th>
+                <th>Ώρα</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= tips_feed_item.content %></td>
+                <td>32</td>
+                <td>Ολυμπιακός-Παναθηναικός</td>
+                <td>25/4/14 21:00μμ</td>
+              </tr>
+            </tbody>
+          </table> 
+      </div> 
       <span class="timestamp">
         Posted <%= time_ago_in_words(tips_feed_item.created_at) %> ago.
       </span>

@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function() {
 	(function myFunction() 	{
 		var feeds = $('.feed')
 		feeds.each(function() {
@@ -9,8 +9,17 @@ $(function(){
   			ctx.font = "20px Arial";
   			var text = $(this).find(".content").html();
   			ctx.fillText(text,20,50);
+
  /* var t = $(this).find("#demo")
   t[0].innerHTML = "Paragraph changed.";*/
 	})
 })
 	();});
+
+
+$(function(){
+(function LoadOnce() { 
+alert("Page is loaded");
+window.location.reload();
+}) 
+});
