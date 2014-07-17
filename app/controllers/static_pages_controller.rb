@@ -36,10 +36,10 @@ class StaticPagesController < ApplicationController
   def galery
     if signed_in?
       @user=current_user
-      @micropost  = User.find_by(admin: true).microposts.where("category = ?", "lucky").build
-      @feed_items = User.find_by(admin: true).feed.paginate(page: params[:page], :per_page => 5)
+      @micropost  = User.find_by(admin: true).microposts.where("category = ?", "gallery").build
+      @feed_items = User.find_by(admin: true).feed.where("category = ?", "gallery").paginate(page: params[:page], :per_page => 5)
     else
-      @feed_items = User.find_by(admin: true).feed.paginate(page: params[:page], :per_page => 5)
+      @feed_items = User.find_by(admin: true).feed.where("category = ?", "gallery").paginate(page: params[:page], :per_page => 5)
     end
   end
 
