@@ -1,11 +1,12 @@
 class StaticPagesController < ApplicationController
+  require 'net/http'
   def home
     if signed_in?
       @user=current_user
-      @micropost  = User.find_by(admin: true).microposts.where("category = ?", "news").build
-      @feed_items = User.find_by(admin: true).feed.where("category = ?", "news").paginate(page: params[:page], :per_page => 5)
+      @micropost  = User.find_by(admin: true).microposts.where(category: ["news","events"]).build
+      @feed_items = User.find_by(admin: true).feed.where(category: ["news","events"]).paginate(page: params[:page], :per_page => 5)
       else
-      @feed_items = User.find_by(admin: true).feed.where("category = ?", "news").paginate(page: params[:page], :per_page => 5)
+      @feed_items = User.find_by(admin: true).feed.where(category: ["news","events"]).paginate(page: params[:page], :per_page => 5)
     end
   end
 
@@ -44,6 +45,12 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def tzakpot
+    @lottoxml= Net::HTTP.get(URI.parse('http://media.opap.gr/Swf/LottoTzakPot.xml'))
+    @lotto=Hash.from_xml(@lottoxml)["kerdi"]
+    @res 
   end
 
   def news

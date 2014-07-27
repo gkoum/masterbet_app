@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'rails', '4.0.5'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -47,4 +48,3 @@ gem 'carrierwave'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-ruby '1.9.3'

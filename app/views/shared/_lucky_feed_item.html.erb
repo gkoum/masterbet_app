@@ -4,6 +4,7 @@
     <div  hidden class="content"><%= lucky_feed_item.content %></div>  
       <% if lucky_feed_item.image_url != nil %>
         <img hidden class="avatar" src=<%= lucky_feed_item.image_url(:thumb).to_s %> alt="Avatar">
+        <img hidden class="logogif" src="/assets/loading.gif" alt="Logogif">
         <canvas class="myCanvas" width="400" height="200" style="border:1px "></canvas>
       <% end %>
       <span class="timestamp">

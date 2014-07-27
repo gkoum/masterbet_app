@@ -1,11 +1,15 @@
+
 <%= form_for @micropost, :html => {:multipart => true} do |f| %>
+  
   <%= render 'shared/error_messages', object: f.object %>
+  <p>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Εισάγετε τίτλο για το άρθρο σας..." %>
-  </div>
+    <%= f.text_area :content, :cols => "30", :rows => "1", placeholder: "Εισάγετε τίτλο για το άρθρο σας..." %>
+  </div></p>
+  <p>
   <div class="field">
-  <%= f.text_area :text, placeholder: "Εισάγετε κείμενο για το άρθρο σας..." %>
-      </div>
+  <%= f.text_area :text, :cols => "40", :rows => "8", class: "tinymce", placeholder: "Εισάγετε κείμενο για το άρθρο σας..." %>
+  </div></p>
   <div class="field">
   <p>
   	<strong>Εισαγωγή εικόνας: </strong><%= f.file_field :image %>
@@ -16,5 +20,7 @@
   	<%= f.select :category, [['Ειδήσεις','news'],['Events','events'],['Blog','blog']] %></p>
   </div>
   
-  <%= f.submit "Ανάρτηση", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Δημοσίευση", class: "btn btn-large btn-primary" %>
+  <%= f.submit 'Άδειασε την Φόρμα', :type => 'reset', class: "btn btn-small btn-primary" %>
 <% end %>
+<%= tinymce %>  

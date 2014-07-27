@@ -7,10 +7,25 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-  
+  <script type="text/javascript">
+        $(document).ready(function(){
+                $("img.advancedpanorama").panorama({
+                        auto_start: 0,
+                        start_position: 1500
+                        /* add your execution parameters here */
+                 });
+        });
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.thickbox').fancybox();
+  });
+  </script>
 
   <%= render 'layouts/shim' %>
-  
+
+
 </head>
   <body data-no-turbolink>
   	<%= render 'layouts/navbar' %>

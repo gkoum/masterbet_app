@@ -26,10 +26,10 @@
       <%= form_for @micropost, :html => {:multipart => true} do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <div class="field">
-      <%= f.text_area :text, placeholder: "Εισάγετε κείμενο για το προγνωστικό σας..." %>
+      <%= f.text_area :text, :cols => "40", :rows => "8", placeholder: "Εισάγετε κείμενο για το προγνωστικό σας..." %>
       </div>
       <div class="field">
-      <%= f.text_area :content, placeholder: "Εισάγετε το προγνωστικό σας..." %>
+      <%= f.text_area :content, :cols => "20", :rows => "1", placeholder: "Εισάγετε το προγνωστικό σας..." %>
       </div>
       <p><div class="field"> 
       Κατηγορία Δημοσίευσης:

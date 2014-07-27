@@ -1,0 +1,13 @@
+<% provide(:title, 'Τζακποτ') %>
+<div class="top">	
+	<h3>Τα τζακποτ για αυτή την εβδομάδα είναι:</h3>
+	
+	<%= @lotto.to_s.gsub("product","Το τζακποτ του tzoker είναι:").gsub("{","").gsub("=>"," ").gsub("}","").gsub("poson","το ποσό των ").gsub("\"","") %>
+	<p>
+	<%= @lotto.to_s.gsub(/['product','{','poson','}','sn','=>']/, 'product' => 'Το τζακποτ του tzoker είναι', '{' => '').gsub("\"","") %></p>
+
+	<p><%= @lotto %></p>
+	<img src="/assets/Panorama.jpg" class="advancedpanorama" width="2448" height="375" usemap="testmap" alt="Atelier du sculpteur" />
+	<%= image_tag("Panorama.jpg", class: "advancedpanorama", width: "2448", height: "375", usemap: "testmap", alt: "Rails") %>
+
+</div>

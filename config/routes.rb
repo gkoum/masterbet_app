@@ -1,12 +1,13 @@
 MasterbetApp::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy, :show]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/results', to: 'static_pages#results', via: 'get'
+  match '/tzakpot', to: 'static_pages#tzakpot', via: 'get'
   match '/blog', to: 'static_pages#blog', via: 'get'
   match '/tips', to: 'static_pages#tips', via: 'get'
   match '/galery', to: 'static_pages#galery', via: 'get'

@@ -18,6 +18,10 @@ class MicropostsController < ApplicationController
     redirect_to current_user
   end
 
+  def show
+    @micropost  = User.find_by(admin: true).microposts.find(params[:id])
+  end
+
   private
 
     def micropost_params

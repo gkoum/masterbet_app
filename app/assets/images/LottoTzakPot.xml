@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kerdi>
+	<product poson="€ 400.000"/>
+</kerdi>
+
+Hash.from_xml "<kerdi><product poson=€ 400.000 /></kerdi>"
+
+Hash.from_xml(<?xml version="1.0" encoding="UTF-8"?><kerdi><product poson="€ 400.000"/></kerdi>)["kerdi"].inject({}) do |product| product end
+
+Hash.from_xml(x)["message"]["param"].inject({}) do |result, elem| 
+  result[elem["name"]] = elem["value"] 
+  result 
+end
+
+"<?xml version="1.0" encoding="UTF-8"?>
+<kerdi>
+	<product poson="€ 400.000"/>
+</kerdi>".gsub("\n", "")

@@ -6,6 +6,10 @@ $(document).ready(function() {
   			var ctx = c[0].getContext("2d");
   			var img = $(this).find(".avatar");
   			ctx.drawImage(img[0], 10, 10);
+
+        var imga = $(this).find(".logogif");
+        ctx.drawImage(imga[0], 10, 10);
+
   			ctx.font = "20px Arial";
   			var text = $(this).find(".content").html();
   			ctx.fillText(text,20,50);
@@ -15,6 +19,7 @@ $(document).ready(function() {
 	})
 })
 	();});
+
 
 
 $(function(){
