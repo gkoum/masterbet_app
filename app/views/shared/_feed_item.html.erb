@@ -24,6 +24,7 @@
       <%= link_to "Διαγραφή σχολίου", feed_item, method: :delete,
               data: { confirm: "Είστε σίγουρος για την διαγραφή του σχολίου;" },
           title: feed_item.content %>
+       <%= link_to "Επεξεργασία σχολίου", edit_micropost_path(feed_item) %>
     <% end %>
     </div>
   </div>

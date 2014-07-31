@@ -31,6 +31,9 @@
 
       <%= f.label :password, "Κωδικός Πρόσβασης" %>
       <%= f.password_field :password, :class => "form-control" %>
+ 
+      <%= f.label :remember_me, "Να με θυμάσαι!" %>  
+      <%= f.check_box :remember_me, {checked: true}, params[:remember_me] %>  
 
       <%= f.submit "Είσοδος", class: "btn btn-large btn-primary" %>
     <% end %>

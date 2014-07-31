@@ -35,14 +35,22 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)    # Not the final implementation!
-    if @user.save
-      sign_in @user
-      flash[:success] = "User created and signed in"
-      redirect_to @user
-    else
-      render 'new'
+
+    respond_to do |format|
+      if @user.save
+        sign_in @user
+        flash[:success] = "User created and signed in"
+        UserMailer.welcome_email(@user).deliver
+ 
+        format.html { redirect_to(@user, notice: 'Email was sent.') }
+        format.json { render json: @user, status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+        
+      end
     end
-  end
+    end
 
   def update
     

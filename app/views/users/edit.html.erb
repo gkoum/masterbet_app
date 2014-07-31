@@ -24,10 +24,12 @@
 
       <%= f.label :address, "Διεύθυνση" %>
       <%= f.password_field :address, :class => "form-control" %>
-
-      <%= f.label :shopnumber, "Αριθμός Πρακτορείου" %>
-      <%= f.password_field :shopnumber, :class => "form-control" %>
-
+      <% if signed_in? and @user.admin? %>
+        
+          <%= f.label :shopnumber, "Αριθμός Πρακτορείου" %>
+          <%= f.password_field :shopnumber, :class => "form-control" %>
+        
+      <% end %>
       <%= f.label :phone, "Τηλέφωνο" %>
       <%= f.password_field :phone, :class => "form-control" %>
 
