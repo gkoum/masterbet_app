@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.5'
 gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

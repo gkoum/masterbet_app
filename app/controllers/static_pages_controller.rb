@@ -27,11 +27,11 @@ class StaticPagesController < ApplicationController
   end
 
   def tips
-    if signed_in?
+    
       @user=current_user
       @micropost  = User.find_by(admin: true).microposts.where("category = ?", "tips").build
       @feed_items = User.find_by(admin: true).feed.where("category = ?", "tips").paginate(page: params[:page], :per_page => 5)
-    end
+    
   end
 
   def galery
