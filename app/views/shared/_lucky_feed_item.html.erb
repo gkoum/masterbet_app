@@ -5,7 +5,11 @@
       <% if lucky_feed_item.image_url != nil %>
         <img hidden class="avatar" src=<%= lucky_feed_item.image_url(:thumb).to_s %> alt="Avatar">
         <img hidden class="logogif" src="/assets/loading.gif" alt="Logogif">
-        <canvas class="myCanvas" width="400" height="200" style="border:1px "></canvas>
+        
+        <canvas class="myCanvas" id="myCanvas" width="400" height="200" style="border:1px "></canvas>
+            
+        <img id="canvasImg" alt="Right click to save me!">
+    
       <% end %>
       <span class="timestamp">
         Posted <%= time_ago_in_words(lucky_feed_item.created_at) %> ago.

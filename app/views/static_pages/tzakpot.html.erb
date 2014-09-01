@@ -1,12 +1,3 @@
 <% provide(:title, 'Τζακποτ') %>
-<div class="top">	
-	<h3>Τα τζακποτ για αυτή την εβδομάδα είναι:</h3>
-	
-	<%= @lotto.to_s.gsub("product","Το τζακποτ του tzoker είναι:").gsub("{","").gsub("=>"," ").gsub("}","").gsub("poson","το ποσό των ").gsub("\"","") %>
-	<p>
-	<%= @lotto.to_s.gsub(/['product','{','poson','}','sn','=>']/, 'product' => 'Το τζακποτ του tzoker είναι', '{' => '').gsub("\"","") %></p>
 
-	<p><%= @lotto %></p>
-	
-
-</div>
+<%= render 'layouts/tv' %>

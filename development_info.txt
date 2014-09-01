@@ -3,3 +3,54 @@ rails generate model User name:string email:string username:string password_dige
 <div class="footer">
     <%= debug(params) if Rails.env.development? %>
     </div>
+
+    <img src="/assets/Panorama.jpg" class="advancedpanorama" width="2448" height="375" usemap="testmap" alt="Atelier du sculpteur" />
+	<%= image_tag("Panorama.jpg", class: "advancedpanorama", width: "2448", height: "375", usemap: "testmap", alt: "Rails") %>
+
+
+	<div class="top">	
+	<h3>Τα τζακποτ για αυτή την εβδομάδα είναι:</h3>
+	
+	<%= @lotto.to_s.gsub("product","Το τζακποτ του tzoker είναι:").gsub("{","").gsub("=>"," ").gsub("}","").gsub("poson","το ποσό των ").gsub("\"","") %>
+	<p>
+	<%= @lotto.to_s.gsub(/['product','{','poson','}','sn','=>']/, 'product' => 'Το τζακποτ του tzoker είναι', '{' => '').gsub("\"","") %></p>
+
+	<p><%= @lotto %></p>
+</div>
+
+<div class="col-lg-4 nopadding">
+          
+          <video id="Video2"
+          style="height:100%; width:100%; border:none;">
+          <source src="http://playground.html5rocks.com/samples/html5_misc/chrome_japan.ogv"
+          type='video/ogg; codecs="theora, vorbis"' />
+          <source src="http://playground.html5rocks.com/samples/html5_misc/chrome_japan.webm"
+          type='video/webm; codecs="vp8, vorbis"' />
+          <source src="http://playground.html5rocks.com/samples/html5_misc/chrome_japan.mp4"
+          type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+          </video>
+          <script>
+
+  var video = document.getElementById('Video1');
+  video.play();
+  var video = document.getElementById('Video2');
+  video.play();
+</script>
+        </div><!-- /.col-lg-4 -->
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+                $("img.advancedpanorama").panorama({
+                        auto_start: 0,
+                        start_position: 1500
+                        /* add your execution parameters here */
+                 });
+        });
+  </script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('.thickbox').fancybox();
+  });
+  </script>

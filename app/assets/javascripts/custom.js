@@ -14,6 +14,14 @@ $(document).ready(function() {
   			var text = $(this).find(".content").html();
   			ctx.fillText(text,20,50);
 
+        var canvas = document.getElementById('myCanvas');
+        // save canvas image as data url (png format by default)
+        var dataURL = canvas.toDataURL();
+
+        // set canvasImg image src to dataURL
+        // so it can be saved as an image
+        document.getElementById('canvasImg').src = dataURL;
+
  /* var t = $(this).find("#demo")
   t[0].innerHTML = "Paragraph changed.";*/
 	})
@@ -21,10 +29,3 @@ $(document).ready(function() {
 	();});
 
 
-
-$(function(){
-(function LoadOnce() { 
-alert("Page is loaded");
-window.location.reload();
-}) 
-});

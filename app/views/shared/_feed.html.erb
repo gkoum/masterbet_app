@@ -1,6 +1,9 @@
-<% if @feed_items.any? %>
-  <ul class="microposts">
-    <%= render partial: 'shared/feed_item', collection: @feed_items %>
-  </ul>
-  <%= will_paginate @feed_items %>
-<% end %>
+<div class="container marketing">
+	<h3>Ειδήσεις και Events - <span class="text-muted">Μόνο από το πρακτορείο μας για έξυπνους παίχτες.</span></h3>
+	<% if @feed_items.any? %>
+  		<ul class="microposts">
+    	<%= render partial: 'shared/feed_item', collection: @feed_items %>
+  		</ul>
+  		<%= will_paginate @feed_items %>
+	<% end %>
+</div>
