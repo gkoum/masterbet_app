@@ -51,6 +51,7 @@ class StaticPagesController < ApplicationController
     @lottoxml= Net::HTTP.get(URI.parse('http://media.opap.gr/Swf/LottoTzakPot.xml'))
     @lotto=Hash.from_xml(@lottoxml)["kerdi"]
     @res 
+    @micropost = Micropost.find_by(id: 60)
   end
 
   def news

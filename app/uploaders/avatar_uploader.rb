@@ -30,6 +30,16 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  
+  #def compose(width, height)
+  #    first_image = MiniMagick::Image.open "first.jpg"
+  #    second_image = MiniMagick::Image.open "second.jpg"
+  #    result = first_image.composite(second_image) do |c|
+  #      c.compose "Over" # OverCompositeOp
+  #      c.geometry "+1+1" # copy second_image onto first_image from (20, 20)
+  #    end
+  #    result.write "output.jpg"
+  #end
 
   # Create different versions of your uploaded files:
   version :thumb do
